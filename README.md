@@ -9,16 +9,23 @@ A Claude Code plugin that packages Anthropic's guide for building high-quality M
 
 ## Install
 
-**Per-user (local development):** symlink this repo into your user plugins directory so it's available in every session:
+**From the Make Heavy Metal marketplace** (recommended):
 
-```bash
-mkdir -p ~/.claude/plugins
-ln -s "$(pwd)" ~/.claude/plugins/mcp-builder
+```
+/plugin marketplace add make-heavy-metal/mcp-builder
+/plugin install mcp-builder@make-heavy-metal
 ```
 
-**Per-project:** symlink or copy the repo into a project's `.claude/plugins/` directory. Claude Code auto-discovers plugins in both locations on startup.
+`/plugin marketplace update make-heavy-metal` pulls new versions when they ship.
 
-**From a marketplace:** once published, install via `/plugin install mcp-builder@<marketplace>`.
+**For local development on the plugin itself:** clone the repo and point Claude Code at it as a local marketplace:
+
+```bash
+git clone https://github.com/make-heavy-metal/mcp-builder.git
+# then, inside Claude Code:
+# /plugin marketplace add ./mcp-builder
+# /plugin install mcp-builder@make-heavy-metal
+```
 
 ## Requirements
 

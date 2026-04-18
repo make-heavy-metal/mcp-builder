@@ -1,0 +1,19 @@
+{
+  "name": "make-heavy-metal",
+  "owner": {
+    "name": "Travis Corrigan",
+    "email": "travis@makeheavymetal.com"
+  },
+  "metadata": {
+    "description": "Claude Code plugins published by Make Heavy Metal."
+  },
+  "plugins": [
+    {
+      "name": "mcp-builder",
+      "source": "./",
+      "description": "Guide and evaluation harness for building high-quality MCP (Model Context Protocol) servers in TypeScript or Python.",
+      "category": "development",
+      "tags": ["mcp", "model-context-protocol", "anthropic", "server", "tools", "evaluation"]
+    }
+  ]
+}

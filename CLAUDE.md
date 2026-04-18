@@ -4,7 +4,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Purpose
 
-This repo **is a Claude Code plugin**, not a library or application. The shippable artifact is the plugin layout (`.claude-plugin/plugin.json` + `skills/` + `scripts/`) — there is nothing to compile, build, or deploy. The plugin packages Anthropic's MCP-server-building guide so other Claude Code sessions can use it.
+This repo **is both a Claude Code plugin and a single-plugin marketplace**. The same root directory serves two roles:
+- `.claude-plugin/plugin.json` → the `mcp-builder` plugin manifest
+- `.claude-plugin/marketplace.json` → the `make-heavy-metal` marketplace catalog (lists this plugin with `"source": "./"`)
+
+There is nothing to compile, build, or deploy. The plugin packages Anthropic's MCP-server-building guide so other Claude Code sessions can use it. Users install via `/plugin marketplace add make-heavy-metal/mcp-builder` then `/plugin install mcp-builder@make-heavy-metal`.
+
+Future plugins under Make Heavy Metal will be added as additional entries in `marketplace.json`, most likely sourced from sibling repos via `{"source": "github", "repo": "make-heavy-metal/<name>"}` rather than crammed into this repo.
 
 When a user asks you to "build an MCP server" or similar, the `mcp-builder` skill's `SKILL.md` is the authoritative process. Load reference files on demand as that document instructs — do not preload them.
 
