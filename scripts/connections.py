@@ -67,7 +67,12 @@ class MCPConnection(ABC):
     async def call_tool(self, tool_name: str, arguments: dict[str, Any]) -> Any:
         """Call a tool on the MCP server with provided arguments."""
         result = await self.session.call_tool(tool_name, arguments=arguments)
-        return result.content
+        # MCP returns Pydantic content blocks (TextContent, ImageContent, ...);
+        # unwrap to JSON-safe dicts so the agent loop can serialize them.
+        return [
+            c.model_dump(mode="json") if hasattr(c, "model_dump") else c
+            for c in result.content
+        ]
 
 
 class MCPConnectionStdio(MCPConnection):
