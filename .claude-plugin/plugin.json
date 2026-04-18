@@ -1,0 +1,11 @@
+{
+  "name": "mcp-builder",
+  "version": "0.1.0",
+  "description": "Guide and evaluation harness for building high-quality MCP (Model Context Protocol) servers in TypeScript or Python.",
+  "author": {
+    "name": "Anthropic, packaged by Travis Corrigan",
+    "email": "travis@makeheavymetal.com"
+  },
+  "license": "Apache-2.0",
+  "keywords": ["mcp", "model-context-protocol", "anthropic", "server", "tools", "evaluation"]
+}
